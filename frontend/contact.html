@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Saheli - Contact</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body data-page="contact">
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Silver Saheli</h1>
+            <p class="tagline">Travel Confidently — We Are With You Every Step</p>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="trips.html">Trips</a>
+            <a href="contact.html" class="active">Contact</a>
+            <a href="family.html">Family</a>
+            <a href="emergency.html">Emergency</a>
+            <button id="themeToggle" class="btn secondary">🌙 Toggle Theme</button>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-hero">
+        <h2>Contact Support</h2>
+        <p>Dear Saheli, we are always here to help you. Feel free to reach out if you need travel assistance or safety support.</p>
+    </section>
+
+    <!-- Form Section -->
+    <section class="contact-form-section">
+
+        <!-- Updated form with required ID for JS -->
+        <form id="contactForm">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <label for="message">How can we help you?</label>
+            <textarea id="message" placeholder="Write your message here..." required></textarea>
+
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+
+        <!-- Contact Info Section -->
+        <div class="contact-info">
+            <h3>Or reach us directly</h3>
+            <p><strong>Emergency Helpline:</strong> +91 98765 43210</p>
+            <p><strong>Email:</strong> support@silversaheli.com</p>
+            <p><strong>Mon–Sat:</strong> 9:00 AM – 7:00 PM</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Silver Saheli. With Love & Safety for Elder Women Travelers.</p>
+    </footer>
+
+    <!-- Main Script -->
+    <script type ="module" src="js/main.js"></script>
+</body>
+</html>

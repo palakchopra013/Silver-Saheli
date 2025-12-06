@@ -1,0 +1,219 @@
+/* ==================================================
+   Silver Saheli - About Page CSS (with Dark Theme)
+================================================== */
+
+/* --------------------------------------------------
+   Global Body
+-------------------------------------------------- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #333;
+    background: url("../images/silver_saheli_bkg.png") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 240, 245, 0.7);
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+/* ---------------- DARK THEME ---------------- */
+body.dark-theme {
+    background: #121212;
+    color: #e6e6e6;
+}
+
+body.dark-theme::before {
+    background: rgba(0,0,0,0.65);
+}
+
+/* --------------------------------------------------
+   Header
+-------------------------------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #e0dada;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-theme header {
+    background: rgba(20,20,20,0.85);
+    border-bottom-color: #333;
+}
+
+header .logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #C2185B;
+    font-size: 28px;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme header .logo h1 {
+    color: #ff8fb1;
+}
+
+header .tagline {
+    font-size: 15px;
+    color: #5a5a5a;
+    transition: color 0.3s;
+}
+
+body.dark-theme header .tagline {
+    color: #ccc;
+}
+
+/* --------------------------------------------------
+   Navigation
+-------------------------------------------------- */
+header nav a {
+    margin-left: 22px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #E91E63;
+}
+
+body.dark-theme header nav a {
+    color: #ddd;
+}
+
+body.dark-theme header nav a:hover,
+body.dark-theme header nav a.active {
+    color: #ff8fb1;
+}
+
+/* --------------------------------------------------
+   Theme Toggle Button (GLOBAL BUTTON STYLE)
+-------------------------------------------------- */
+
+.btn {
+    background-color: #D81B60;
+    color: #fff;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #AD1457;
+    transform: scale(1.07);
+}
+
+/* --------------------------------------------------
+   About Sections
+-------------------------------------------------- */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 35px 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme section {
+    background: rgba(40, 40, 40, 0.95);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+section h2,
+section h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #C2185B;
+    font-size: 30px;
+    margin-bottom: 18px;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme section h2,
+body.dark-theme section h3 {
+    color: #ff8fb1;
+}
+
+section p {
+    font-size: 19px;
+    margin-bottom: 18px;
+    color: #444;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme section p {
+    color: #ccc;
+}
+
+/* --------------------------------------------------
+   Why Us List
+-------------------------------------------------- */
+.why-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.why-us li {
+    font-size: 18px;
+    margin: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+body.dark-theme .why-us li {
+    color: #ddd;
+}
+
+.why-us li::before {
+    content: "👩‍🦳";
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+}
+
+/* --------------------------------------------------
+   Footer
+-------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 28px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(5px);
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme footer {
+    background: rgba(20,20,20,0.9);
+    color: #ccc;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silver Saheli</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="index">
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Silver Saheli</h1>
+            <p class="tagline">Safe & Joyful Travel for Senior Women</p>
+        </div>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="trips.html">Trips</a>
+            <a href="contact.html">Contact</a>
+            <a href="family.html">Family</a>
+            <a href="emergency.html">Emergency</a>
+            <button id="themeToggle" class="btn secondary">🌙 Toggle Theme</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Udaan ab bhi baaki hai ✨</h2>
+            <p>Women-only travel for senior ladies — curated trips, companions, and full safety support.</p>
+
+            <button id="exploreTrips" class="btn hero-primary">Explore Trips</button>
+            <button id="joinCommunity" class="btn hero-primary">Join the Community</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Silver Saheli</h2>
+        <p>
+            A platform created exclusively for senior women who love to travel but value safety and comfort. 
+            From day outings to pilgrimages, we manage everything: support staff, healthy meals, medicine reminders, 
+            and real-time location sharing with family.
+        </p>
+    </section>
+
+    <!-- Trips Section -->
+    <section id="trips">
+        <h2>Upcoming Women-Only Trips</h2>
+
+        <div class="trip-cards">
+            <div class="card">
+                <h3>Ayodhya Temple Visit</h3>
+                <p>One-day pilgrimage with female guides, safe transport & satvik meals.</p>
+            </div>
+
+            <div class="card">
+                <h3>Haridwar & Ganga Aarti</h3>
+                <p>Peaceful 2-day spiritual retreat with full medical support.</p>
+            </div>
+
+            <div class="card">
+                <h3>Jaipur Cultural Day Trip</h3>
+                <p>Explore heritage & markets at an easy pace with breaks & comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety">
+        <h2>Safety & Support</h2>
+
+        <div class="card-emergency">
+            <h3>Travel Without Fear</h3>
+            <p>Real-time tracking, verified women staff, and a dedicated emergency response team.</p>
+
+            <button class="btn emergency" id="sosBtn">SOS</button>
+        </div>
+    </section>
+
+    <!-- Wellness Section -->
+    <section id="wellness">
+        <h2>Meals & Medicines</h2>
+        <div class="card-family">
+            <h3>Care Beyond Travel</h3>
+            <p>
+                Curated meals (Diabetic / Jain / Low-salt / Protein-rich) & automatic medicine reminders 
+                with family alerts for full peace of mind.
+            </p>
+        </div>
+    </section>
+
+    <!-- Family Tracking Section -->
+    <section id="family-tracking">
+        <h2>Family Tracking</h2>
+        <div class="card-family">
+            <h3>Peace of Mind for Loved Ones</h3>
+            <p>Live location, automated trip updates & secure sharing only with trusted family.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h2>What Our Queens Say 💖</h2>
+
+        <div class="testimonial">
+            <p>"After my husband passed away, I stopped traveling. Silver Saheli gave me my confidence and friends back."</p>
+            <span>- Meena, 68</span>
+        </div>
+
+        <div class="testimonial">
+            <p>"We felt so safe, and the team kept updating my daughter. I loved the Haridwar trip!"</p>
+            <span>- Sunita, 72</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Join Our Community</h2>
+
+        <form id="newsletterForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <input type="email" id="newsletterEmail" placeholder="Email Address" required>
+            <textarea placeholder="How can we help you?" required></textarea>
+
+            <button class="btn" type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Silver Saheli. All rights reserved.</p>
+    </footer>
+
+    <!-- JS -->
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/index.js"></script>
+
+</body>
+</html>

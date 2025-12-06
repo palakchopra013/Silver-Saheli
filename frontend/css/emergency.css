@@ -1,0 +1,227 @@
+/* ============================================================
+   SILVER SAHELI – EMERGENCY PAGE CSS (with Global Theme Support)
+=============================================================== */
+
+/* ------------------------------ */
+/* GLOBAL PAGE BACKGROUND */
+/* ------------------------------ */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background: url("../images/silver_saheli_bkg.png") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    transition: background 0.3s, color 0.3s;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255, 245, 247, 0.65);
+    z-index: -1;
+    transition: background 0.3s;
+}
+
+/* DARK THEME */
+body.dark-theme {
+    color: #ddd;
+    background-color: #1a1a1a;
+}
+body.dark-theme::before {
+    background: rgba(25,25,25,0.85);
+}
+
+/* ------------------------------ */
+/* GLOBAL BUTTON */
+/* ------------------------------ */
+.btn {
+    background-color: #D81B60;
+    color: #fff;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #AD1457;
+    transform: scale(1.07);
+}
+
+body.dark-theme .btn {
+    background-color: #ff4f88;
+}
+body.dark-theme .btn:hover {
+    background-color: #ff77a5;
+}
+
+/* ------------------------------ */
+/* HEADER */
+/* ------------------------------ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #F8BBD0;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-theme header {
+    background: rgba(20,20,20,0.9);
+    border-bottom: 2px solid #663344;
+}
+
+header .logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #C2185B;
+    margin: 0;
+    font-size: 28px;
+    transition: color 0.3s;
+}
+body.dark-theme header .logo h1 {
+    color: #ff8fb1;
+}
+
+header .tagline {
+    font-size: 14px;
+    color: #666;
+    transition: color 0.3s;
+}
+body.dark-theme header .tagline {
+    color: #ccc;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+header nav a:hover,
+header nav a.active {
+    color: #C2185B;
+}
+
+body.dark-theme header nav a {
+    color: #ddd;
+}
+body.dark-theme header nav a:hover,
+body.dark-theme header nav a.active {
+    color: #ff8fb1;
+}
+
+/* ------------------------------ */
+/* SECTION WRAPPER */
+/* ------------------------------ */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-theme section {
+    background: rgba(40,40,40,0.95);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+section h2, section h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #C2185B;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+body.dark-theme section h2,
+body.dark-theme section h3 {
+    color: #ff8fb1;
+}
+
+section p,
+section ul {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #444;
+    transition: color 0.3s;
+}
+body.dark-theme section p,
+body.dark-theme section ul {
+    color: #ccc;
+}
+
+/* ------------------------------ */
+/* EMERGENCY CARDS */
+/* ------------------------------ */
+.emergency-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.card {
+    background: rgba(255,255,255,0.98);
+    padding: 25px;
+    border-radius: 18px;
+    border: 2px solid #F8BBD0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    width: 300px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+body.dark-theme .card {
+    background: rgba(45,45,45,0.95);
+    border: 2px solid #774455;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* ------------------------------ */
+/* SOS PULSE EFFECT */
+/* ------------------------------ */
+.pulse-effect {
+    animation: sosPulse 0.6s ease-in-out 2;
+}
+
+@keyframes sosPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* LIST ITEMS */
+ul li {
+    font-size: 17px;
+    margin: 8px 0;
+    color: #444;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+body.dark-theme ul li {
+    color: #ddd;
+}

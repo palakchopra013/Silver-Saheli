@@ -1,0 +1,355 @@
+/* ========================================== */
+/* GLOBAL STYLES */
+/* ========================================== */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #4a2e4b;
+    background: url("../images/silver_saheli_bkg.png") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    transition: background 0.3s, color 0.3s;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,245,247,0.65);
+    z-index: -1;
+    transition: background 0.3s;
+}
+
+/* ------------ DARK THEME -------------- */
+body.dark-theme {
+    color: #e4d3e7;
+    background-color: #1a1a1a;
+    background-image: none;
+}
+
+body.dark-theme::before {
+    background: rgba(15,15,15,0.85);
+}
+
+/* ========================================== */
+/* HEADER */
+/* ========================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+body.dark-theme header {
+    background: rgba(20,20,20,0.85);
+}
+
+header .logo h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #B30059;
+    margin: 0;
+    font-size: 28px;
+    transition: color 0.3s;
+}
+
+body.dark-theme header .logo h1 {
+    color: #ff7fb2;
+}
+
+header .tagline {
+    font-size: 14px;
+    color: #794a7a;
+    transition: color 0.3s;
+}
+
+body.dark-theme .tagline {
+    color: #d5b6d8;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #4b2e46;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #C2185B;
+}
+
+body.dark-theme header nav a {
+    color: #e4c1e9;
+}
+
+body.dark-theme header nav a:hover,
+body.dark-theme header nav a.active {
+    color: #ff8cc5;
+}
+
+/* ========================================== */
+/* HERO SECTION */
+/* ========================================== */
+
+.hero {
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+.hero h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+    color: #8E0038;
+    transition: color 0.3s;
+}
+
+body.dark-theme .hero h2 {
+    color: #ff7aa9;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #5A3B3B;
+    transition: color 0.3s;
+}
+
+body.dark-theme .hero p {
+    color: #e6c5d6;
+}
+
+/* ========================================== */
+/* BUTTONS */
+/* ========================================== */
+
+.btn {
+    background-color: #D81B60;
+    color: #fff;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #AD1457;
+    transform: scale(1.07);
+}
+
+/* Hero buttons */
+.btn.hero-primary {
+    background: linear-gradient(135deg, #c078ed, #8a5fd1);
+    color: white;
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(128,88,200,0.3);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn.hero-primary:hover {
+    background: linear-gradient(135deg, #8a5fd1, #5e3cae);
+    transform: scale(1.05);
+}
+
+/* Emergency button */
+.btn.emergency {
+    background-color: #E53935;
+    color: #fff;
+    border-radius: 16px;
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(229,57,53,0.4);
+    transition: 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.btn.emergency:hover {
+    background-color: #C62828;
+    transform: scale(1.08);
+}
+
+/* ========================================== */
+/* SECTIONS */
+/* ========================================== */
+
+section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* ========================================== */
+/* TRIP CARDS */
+/* ========================================== */
+
+.trip-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 18px;
+    width: 300px;
+    margin: 15px auto;
+    box-shadow: 0 8px 25px rgba(149,82,111,0.25);
+    transition: 0.3s;
+}
+
+body.dark-theme .card {
+    background: rgba(40,40,40,0.9);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(149,82,111,0.35);
+}
+
+/* ========================================== */
+/* EMERGENCY CARD */
+/* ========================================== */
+
+.card-emergency {
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(220,60,90,0.25);
+    max-width: 500px;
+    margin: 15px auto;
+    transition: background 0.3s;
+}
+
+body.dark-theme .card-emergency {
+    background: rgba(50,0,0,0.7);
+}
+
+/* ========================================== */
+/* FAMILY CARD */
+/* ========================================== */
+
+.card-family {
+    background: rgba(255,255,255,0.95);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(149,82,111,0.25);
+    max-width: 500px;
+    margin: 15px auto;
+}
+
+body.dark-theme .card-family {
+    background: rgba(45,45,45,0.9);
+}
+
+/* ========================================== */
+/* TESTIMONIAL */
+/* ========================================== */
+
+.testimonial {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    width: 400px;
+    border-left: 6px solid #B30059;
+    border-radius: 15px;
+    margin: 20px auto;
+    font-style: italic;
+    color: #6D3A3A;
+    transition: 0.3s;
+}
+
+body.dark-theme .testimonial {
+    background: rgba(35,35,35,0.95);
+    color: #e1bfd6;
+    border-left-color: #ff7fb2;
+}
+
+/* ========================================== */
+/* CONTACT FORM */
+/* ========================================== */
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 12px;
+    background: #fff7fa;
+    border: 1px solid #cc9baa;
+    transition: 0.3s;
+}
+
+body.dark-theme form input,
+body.dark-theme form textarea {
+    background: #2b2b2b;
+    color: #f1d9e4;
+    border: 1px solid #805a82;
+}
+
+/* ========================================== */
+/* FOOTER */
+/* ========================================== */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px);
+    color: #5A3A3A;
+    transition: 0.3s;
+}
+
+body.dark-theme footer {
+    background: rgba(20,20,20,0.9);
+    color: #e0c6d6;
+}
+
+/* ========================================== */
+/* RESPONSIVE */
+/* ========================================== */
+
+@media (max-width: 768px) {
+    
+    .trip-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card, .testimonial, .card-emergency, .card-family {
+        width: 90%;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+}

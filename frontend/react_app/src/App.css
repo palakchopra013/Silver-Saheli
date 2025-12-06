@@ -1,0 +1,69 @@
+:root{
+  --accent:#C2185B;
+  --bg-overlay: rgba(255,245,247,0.7);
+  --card-bg: rgba(255,255,255,0.95);
+  --text: #333;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Roboto", sans-serif;
+  color:var(--text);
+  background: url("./assets/images/silver_saheli_bkg.png") center/cover fixed no-repeat;
+  transition: background 0.3s, color 0.3s;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background: var(--bg-overlay);
+  z-index:-1;
+}
+
+.app{min-height:100vh; display:flex; flex-direction:column;}
+.main-content{flex:1; padding:24px;}
+
+/* Navbar */
+.navbar{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:16px 28px; background: rgba(255,255,255,0.9); position:sticky; top:0; z-index:50;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.nav-left {display:flex; align-items:center; gap:14px}
+.logo {font-family: "Montserrat", sans-serif; color:var(--accent); font-weight:700; font-size:20px}
+.nav-links a { margin-left:14px; text-decoration:none; color:var(--text); font-weight:600;}
+.nav-links a.active { color:var(--accent); text-decoration:underline; }
+
+/* Page wrapper/section card */
+.page-section{
+  max-width:1000px; margin:32px auto; background:var(--card-bg);
+  border-radius:14px; padding:28px; box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Cards */
+.grid { display:grid; gap:18px; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); }
+.card {
+  background: white; padding:18px; border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,0.06);
+}
+h1,h2,h3{ font-family:"Montserrat",sans-serif; color:var(--accent) }
+p{ line-height:1.5; color:#444; }
+
+/* Buttons */
+.btn{ background:var(--accent); color:white; padding:10px 16px; border:none; border-radius:10px; cursor:pointer; font-weight:700 }
+.btn.secondary{ background: linear-gradient(135deg,#c078ed,#8a5fd1) }
+
+/* Footer */
+.footer{
+  padding:20px; text-align:center; background:rgba(255,255,255,0.92);
+  font-weight:600;
+}
+
+/* Dark theme toggle class (applies on body) */
+body.dark-theme{
+  color:#e6e6e6;
+  background: #111;
+}
+body.dark-theme::before{ background: rgba(20,20,20,0.9) }
+body.dark-theme .navbar{ background: rgba(20,20,20,0.9) }
+body.dark-theme .page-section{ background: rgba(25,25,25,0.95) }
+body.dark-theme .card{ background: rgba(35,35,35,0.95); color:#e6dfe8 }
