@@ -10,7 +10,7 @@ body{
   margin:0;
   font-family: "Roboto", sans-serif;
   color:var(--text);
-  background: url("./assets/images/silver_saheli_bkg.png") center/cover fixed no-repeat;
+  background: url("/assets/images/silver_saheli_bkg.png") center/cover fixed no-repeat;
   transition: background 0.3s, color 0.3s;
 }
 body::before{
