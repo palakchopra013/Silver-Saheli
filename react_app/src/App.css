@@ -17,7 +17,8 @@ body::before{
   content:"";
   position:fixed; inset:0;
   background: var(--bg-overlay);
-  z-index:-1;
+  z-index:0;
+  pointer-events:none;
 }
 
 .app{min-height:100vh; display:flex; flex-direction:column;}
@@ -56,6 +57,11 @@ p{ line-height:1.5; color:#444; }
 .footer{
   padding:20px; text-align:center; background:rgba(255,255,255,0.92);
   font-weight:600;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 /* Dark theme toggle class (applies on body) */
