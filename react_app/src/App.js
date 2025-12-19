@@ -1,9 +1,30 @@
-function App() {
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Trips from "./pages/Trips";
+import Family from "./pages/Family";
+import Emergency from "./pages/Emergency";
+import Contact from "./pages/Contact";
+
+export default function App() {
   return (
-    <div style={{ color: "white", padding: "50px", fontSize: "32px" }}>
-      🚀 Silver Saheli App Loaded
-    </div>
+    <BrowserRouter>
+      <Navbar />
+
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/trips" element={<Trips />} />
+          <Route path="/family" element={<Family />} />
+          <Route path="/emergency" element={<Emergency />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
-
-export default App;
