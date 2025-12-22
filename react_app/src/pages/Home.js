@@ -1,28 +1,26 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <section className="page-section">
-      {/* HERO */}
-      <div style={{ marginBottom: 40 }}>
-        <h1 style={{ fontSize: "2.4rem", marginBottom: 12 }}>
-          Travel Freely. Safely. Together.
-        </h1>
+    <section className="home">
 
-        <p style={{ fontSize: "1.1rem", maxWidth: 700 }}>
+      {/* HERO SECTION */}
+      <div className="home-hero">
+        <h1>Travel Freely. Safely. Together.</h1>
+
+        <p className="home-subtitle">
           <strong>Silver Saheli</strong> is India’s first women-only travel
           platform designed exclusively for senior women (60+).
-          Travel with dignity, safety, medical care, and complete family peace of mind.
+          <br />
+          Safe journeys, medical care, and complete family peace of mind.
         </p>
 
-        <div style={{ display: "flex", gap: 14, marginTop: 24 }}>
-          <button
-            className="btn"
-            onClick={() => navigate("/trips")}
-          >
+        <div className="home-actions">
+          <button className="btn" onClick={() => navigate("/trips")}>
             View Upcoming Trips
           </button>
 
@@ -35,68 +33,58 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TRUST HIGHLIGHTS */}
-      <div className="grid" style={{ marginBottom: 40 }}>
+      {/* FEATURES */}
+      <div className="home-features">
         <div className="card">
-          <h3>👩‍👩‍👧 Women-Only Groups</h3>
+          <h3>Women-Only Travel Groups</h3>
           <p>
             Travel only with women of your age group, accompanied by trained
-            female coordinators.
+            female coordinators throughout the journey.
           </p>
         </div>
 
         <div className="card">
-          <h3>🩺 Medical Support</h3>
+          <h3>Medical & Safety Support</h3>
           <p>
-            On-trip medical assistance, emergency protocols, and health-friendly
-            itineraries.
+            Health-friendly itineraries, emergency response plans, and
+            on-trip assistance for complete peace of mind.
           </p>
         </div>
 
         <div className="card">
-          <h3>📍 Family Live Tracking</h3>
+          <h3>Family Connectivity</h3>
           <p>
-            Your family can track your journey in real-time and stay connected
-            throughout the trip.
+            Families stay informed with live updates, location sharing,
+            and emergency contact access.
           </p>
         </div>
       </div>
 
-      {/* WHY SILVER SAHELI */}
-      <div style={{ marginBottom: 40 }}>
-        <h2>Why Thousands of Families Trust Silver Saheli</h2>
+      {/* TRUST SECTION */}
+      <div className="home-trust">
+        <h2>Why Families Trust Silver Saheli</h2>
 
-        <ul style={{ fontSize: "1rem", lineHeight: 1.8 }}>
-          <li>✔ Carefully curated slow-paced itineraries</li>
-          <li>✔ Safe hotels, hygienic food & verified transport</li>
-          <li>✔ Emergency SOS & 24/7 support team</li>
-          <li>✔ Respectful environment for senior women</li>
+        <ul>
+          <li>✔ Slow-paced and comfortable itineraries</li>
+          <li>✔ Verified hotels, transport & hygienic food</li>
+          <li>✔ 24/7 support team & emergency assistance</li>
+          <li>✔ Respectful, warm and safe environment</li>
         </ul>
       </div>
 
-      {/* EMOTIONAL CONNECT */}
-      <div
-        className="card"
-        style={{
-          background: "linear-gradient(135deg,#fde2ec,#f9d1e3)",
-          borderLeft: "6px solid var(--accent)",
-        }}
-      >
+      {/* EMOTIONAL CTA */}
+      <div className="home-cta">
         <h2>For Every Mother Who Dreamed of Travelling Again</h2>
-        <p style={{ fontSize: "1.05rem" }}>
-          Many women spend their lives caring for others.
-          Silver Saheli is about giving them the confidence to explore again —
-          without fear, without burden, and with complete support.
+        <p>
+          Silver Saheli exists to give senior women the confidence to
+          explore the world again — with dignity, safety and companionship.
         </p>
 
-        <button
-          className="btn"
-          style={{ marginTop: 16 }}
-          onClick={() => navigate("/family")}
-        >
-          How Families Stay Connected
+        <button className="btn" onClick={() => navigate("/family")}>
+          See How Families Stay Connected
         </button>
       </div>
+
     </section>
   );
 }

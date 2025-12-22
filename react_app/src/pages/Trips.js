@@ -1,39 +1,114 @@
 import React from "react";
+import "./Trips.css";
 
-export default function Trips() {
+function Trips() {
+  const trips = [
+    {
+      title: "🛕 One-Day Temple Visit",
+      duration: "1 Day",
+      level: "Very Easy",
+      description:
+        "A peaceful one-day spiritual outing designed especially for senior women.",
+      highlights: [
+        "Visit to nearby famous temple",
+        "Slow-paced darshan",
+        "Comfortable transport",
+        "Assistance throughout the day",
+        "Vegetarian lunch included",
+      ],
+      note: "Ideal for senior women seeking calm and devotion",
+    },
+    {
+      title: "🌿 Vrindavan – Mathura Spiritual Tour",
+      duration: "3 Days / 2 Nights",
+      level: "Easy",
+      description:
+        "A gentle spiritual journey covering Krishna temples with proper care and rest.",
+      highlights: [
+        "Guided temple visits",
+        "Senior-friendly hotel stay",
+        "Group travel with women companions",
+        "Morning & evening aarti",
+      ],
+      note: "Perfect for women aged 55+",
+    },
+    {
+      title: "🌸 Rishikesh Relaxation Retreat",
+      duration: "4 Days / 3 Nights",
+      level: "Easy",
+      description:
+        "Relax, breathe, and rejuvenate by the Ganges with yoga and light activities.",
+      highlights: [
+        "Light yoga & meditation",
+        "Ganga aarti experience",
+        "Calm riverside stay",
+        "Healthy vegetarian meals",
+      ],
+      note: "Great for mental peace & relaxation",
+    },
+    {
+      title: "🚆 Shirdi Sai Baba Darshan",
+      duration: "2 Days / 1 Night",
+      level: "Easy",
+      description:
+        "A well-planned darshan trip with special focus on comfort and safety.",
+      highlights: [
+        "Priority darshan assistance",
+        "Comfortable train/bus travel",
+        "Dedicated trip coordinator",
+        "Medical help on call",
+      ],
+      note: "Trusted spiritual journey with full support",
+    },
+    {
+      title: "🏞️ Short Hill Getaway – Mussoorie",
+      duration: "3 Days / 2 Nights",
+      level: "Moderate",
+      description:
+        "A refreshing hill break with scenic views and relaxed sightseeing.",
+      highlights: [
+        "Scenic viewpoints",
+        "Leisure walks",
+        "Warm & cozy stay",
+        "No hectic schedule",
+      ],
+      note: "For women who enjoy nature at a relaxed pace",
+    },
+  ];
+
   return (
-    <section className="page-section">
-      <h1>Our Travel Programs ✈️</h1>
-      <p>
-        Each journey is thoughtfully designed keeping comfort, safety,
-        and enjoyment of senior women in mind.
+    <div className="page-section trips-page"> 
+      <h1 className="trips-title">Our Special Trips</h1>
+      <p className="trips-subtitle">
+        Safe, comfortable, and joyful journeys designed specially for senior
+        women 💖
       </p>
 
-      <div className="grid" style={{ marginTop: 32 }}>
-        <div className="card">
-          <h3>Rishikesh Wellness Retreat</h3>
-          <p><strong>Duration:</strong> 7 Days</p>
-          <p><strong>Highlights:</strong> Yoga, meditation, Ganga Aarti</p>
-          <p><strong>Support:</strong> Medical staff + female coordinator</p>
-          <button className="btn">View Itinerary</button>
-        </div>
+      <div className="trips-grid">
+        {trips.map((trip, index) => (
+          <div className="trip-card" key={index}>
+            <h2>{trip.title}</h2>
 
-        <div className="card">
-          <h3>Jaipur Heritage Experience</h3>
-          <p><strong>Duration:</strong> 5 Days</p>
-          <p><strong>Highlights:</strong> Palaces, guided city tours</p>
-          <p><strong>Support:</strong> Wheelchair assistance available</p>
-          <button className="btn">View Itinerary</button>
-        </div>
+            <p className="trip-meta">
+              {trip.duration} • {trip.level}
+            </p>
 
-        <div className="card">
-          <h3>Kerala Backwaters & Ayurveda</h3>
-          <p><strong>Duration:</strong> 6 Days</p>
-          <p><strong>Highlights:</strong> Houseboat stay, Ayurvedic therapy</p>
-          <p><strong>Support:</strong> Doctor-on-call</p>
-          <button className="btn">View Itinerary</button>
-        </div>
+            <p className="trip-description">{trip.description}</p>
+
+            <ul className="trip-highlights">
+              {trip.highlights.map((item, i) => (
+                <li key={i}>✔ {item}</li>
+              ))}
+            </ul>
+
+            <p className="trip-note">{trip.note}</p>
+
+            <button className="trip-button">View Details</button>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
+
+export default Trips;
