@@ -1,0 +1,2 @@
+web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT main:app
+release: python -c "from db_optimization import create_indexes; import asyncio; asyncio.run(create_indexes())"

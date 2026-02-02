@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # FastAPI Backend
+  backend:
+    build: .
+    container_name: silver-saheli-backend
+    ports:
+      - "5050:5050"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+      - ENVIRONMENT=production
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key}
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
+    depends_on:
+      - mongo
+    volumes:
+      - ./:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 5050 --reload
+
+  # MongoDB Database
+  mongo:
+    image: mongo:7.0
+    container_name: silver-saheli-mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD:-password}
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis for Caching/Rate Limiting (optional)
+  redis:
+    image: redis:7-alpine
+    container_name: silver-saheli-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongo_data:

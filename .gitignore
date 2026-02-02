@@ -1,12 +1,23 @@
+# Python virtual environment
+venv/
+backend/venv/
+env/
+*.pyc
+__pycache__/
+*.egg-info/
+.pytest_cache/
+
 # Node modules
 node_modules/
 backend/node_modules/
 frontend/node_modules/
+react_app/node_modules/
 
 # Environment files
 .env
 backend/.env
 frontend/.env
+react_app/.env
 
 # Build output
 dist/
@@ -15,3 +26,13 @@ build/
 # OS + Editor files
 .DS_Store
 .vscode/
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+*.iml
+
+# React build
+react_app/build/
